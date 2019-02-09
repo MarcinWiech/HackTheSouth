@@ -1,5 +1,5 @@
 import ML
-from test.src import weather, db
+from src import weather, db
 from ML import high_risk_area
 from ML.extra_trees_regr import ExtraTreesRegr
 import random
@@ -29,6 +29,7 @@ def addCities():
         print(area[0])
 
         db.insertRow(location, x, y, temp, wind, humidity, rain, area[0])
+        time.sleep(5)
 
 def randomAddLocations():
     while 1:
@@ -56,7 +57,7 @@ def randomAddLocations():
         time.sleep(5)
 
 if __name__ == '__main__':
-    pass
+    addCities()
 
 
 

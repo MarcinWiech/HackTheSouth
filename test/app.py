@@ -41,7 +41,7 @@ def get_output():
 def handle_data():
     req = request.form['city']
     json = weather.getCityWeather(req)
-    predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), 0]], [weather.getCoordinates(json)])
+    predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
     print(predict)
     return index()
 
