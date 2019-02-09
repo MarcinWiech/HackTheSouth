@@ -12,12 +12,17 @@ body{font-family: 'Noto Serif SC', serif; background-color:  #E8E8ED;}
 #grid{padding: none;}
 #inputCol{align-content: center;}
 #pic05{margin: 0; padding: 0px;}
+#searchBar{width: 400px;}
+/*#predict{cursor: url(Trump.cur), default;}*/
+
 *{
 	margin: 0;
 	padding: 0;
 }
 #map{
-
+ 	height:  462.5px;
+	margin:0;
+	padding: 0;
 }
 .imgbox {
     display: grid;
@@ -62,6 +67,7 @@ div{padding: 0;}
 
 .jumbotron{
 	background-image: url("Pictures/02.jpg");
+	font-weight: bold;
 	height: 1100px;
 	margin: 0;
 	-webkit-background-size: 100% 100%;
@@ -73,4 +79,7 @@ div{padding: 0;}
 .btn-dark{
 	opacity: 0.86;
 }
+
+
+input{border-radius: 20px; margin-bottom: 30px; text-align: center; opacity: 0.9;}
 
