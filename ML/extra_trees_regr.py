@@ -29,7 +29,6 @@ class ExtraTreesRegr:
                 adjustment_xD.append(100)
             else:
                 adjustment_xD.append(0)
-                
         return adjustment_xD
         
 
