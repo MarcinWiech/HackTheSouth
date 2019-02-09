@@ -17,17 +17,29 @@ class ExtraTreesRegr:
     
     def is_input_alright(self, arg_list, coordinates):
         if len(arg_list) == len(coordinates):
-            if len(arg_list[0]) == 4 and len(coordinates[0]) == 2:
+            if len(coordinates[0]) == 2:
+                coordinates = self.add_element(coordinates, 0)
+            if len(arg_list[0]) == 4 and len(coordinates[0]) == 3:
                 return True
         else: 
             return False
+    
+    def add_element(self, coordinates, number):
+        number = int(number)
+        for coords in coordinates:
+            coords.append(number)
+        return coordinates
+
 
     def predict_hard_coded(self, coordinates):
         adjustment_xD = list()
         for coords in coordinates:
-            if coords[0] > 0 and coords[0] > 0:
-                adjustment_xD.append(100)
+            if coords[0] > 0 and coords[1] > 0:
+                temp_adjustment = coords[2]*10
+                adjustment_xD.append(temp_adjustment)
             else:
+                coords[0] = 0
+                coords[0] = 1
                 adjustment_xD.append(0)
         return adjustment_xD
         
