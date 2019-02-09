@@ -67,6 +67,7 @@ div{padding: 0;}
 
 .jumbotron{
 	background-image: url("Pictures/02.jpg");
+	opacity:0.5;
 	font-weight: bold;
 	height: 1100px;
 	margin: 0;
