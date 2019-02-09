@@ -28,6 +28,9 @@ def getCoordinatesWeather(lat, lon):
     r = requests.get(base_url, params=payload)  # gets json output
     return r.json()
 
+def getLocation(json):
+    return json['name']
+
 def getTemp(json):
     return json['main']['temp']
 
@@ -37,13 +40,15 @@ def getWind(json):
 def getHumidity(json):
     return json['main']['humidity']
 
-
-
+def getCoordinates(json):
+    lon = json['coord']['lon']
+    lat = json['coord']['lat']
+    return (lon,lat)
 
 
 if __name__ == '__main__':
-    s = getCoordinatesWeather(50,50)
-    print(json.dumps(s))
+    s = getCityWeather("London")
+    print(getCoordinates(s))
 
 
 
