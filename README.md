@@ -1,0 +1,2 @@
+# HackTheSouth
+Wildfire prediction project
