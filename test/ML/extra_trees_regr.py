@@ -30,6 +30,8 @@ class ExtraTreesRegr:
             coords.append(number)
         return coordinates
 
+    def test(self):
+        src.weather.get
 
     def predict_hard_coded(self, coordinates):
         adjustment_xD = list()

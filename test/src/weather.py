@@ -7,7 +7,7 @@ test_json = "{'coord': {'lon': -0.13, 'lat': 51.51}, 'weather': [{'id': 803, 'ma
 
 def get_api_key():
     config = configparser.ConfigParser()
-    config.read('../credentials/config.ini')
+    config.read('/home/marcin/Projects/HackTheSouth/test/credentials/config.ini')
     return config['openweathermap']['api']
 
 def getCityWeather(location):
@@ -41,12 +41,11 @@ def getHumidity(json):
 def getCoordinates(json):
     lon = json['coord']['lon']
     lat = json['coord']['lat']
-    return (lon,lat)
+    return [lon,lat]
 
 
 if __name__ == '__main__':
-    s = getCityWeather("Middletown")
-    print(getCoordinates(s))
+    print(getWind(getCityWeather("Middletown")))
 
 
 
