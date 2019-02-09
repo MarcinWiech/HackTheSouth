@@ -42,5 +42,3 @@ class ExtraTreesRegr:
                 coords[0] = 1
                 adjustment_xD.append(0)
         return adjustment_xD
-        
-
