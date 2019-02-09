@@ -1,6 +1,5 @@
 import ML
-from src import weather
-from src import db
+from test.src import weather, db
 from ML import high_risk_area
 from ML.extra_trees_regr import ExtraTreesRegr
 import random

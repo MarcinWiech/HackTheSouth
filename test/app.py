@@ -1,16 +1,12 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import json
 from ML.extra_trees_regr import ExtraTreesRegr
-from geopy import geocoders
-gn = geocoders.GeoNames(username="makamaka88@gmail.com")
-print(gn.geocode("Palo Alto"))
-
-
+import json
+import
 
 regr = ExtraTreesRegr()
-print(regr.predict([[2,54,6,454]], [[3,3]]))
+
 app = Flask(__name__)
 
 
@@ -48,6 +44,8 @@ def handle_data():
 hts2019
 makamaka88@gmail.com
 """
+def test():
+    print()
 
 if __name__ == '__main__':
     app.run()
