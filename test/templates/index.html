@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <p>Hello, {{ output }}!</p>
 
 <script type=text/javascript>
@@ -57,15 +58,20 @@ function loadDoc() {
 
 
 <form action="{{ url_for('index') }}" method="post">
-    <input type="text" name="projectFilepath">
+    <input type="text" placeholder="temperature C" name="temperature">
+    <input type="text" placeholder="humidity" name="humidity">
+    <input type="text" placeholder="wind (km/h)" name="wind">
+    <input type="text" placeholder="rain (mm/m^2)" name="rain">
+
+
     <input type="submit">
 </form>
 
-<form method="POST">
-    <input name="text">
-    <input type="submit">
-</form>
+{#<form method="POST">#}
+{#    <input name="text">#}
+{#    <input type="submit">#}
+{#</form>#}
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>
