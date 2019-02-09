@@ -8,5 +8,5 @@ class ExtraTreesRegr:
         self.filename = "ml_model.sav"
         self.model = pickle.load(open(self.filename, 'rb'))
     
-    def predict(self, arg_list):
+    def predict(self, arg_list):   
         return self.model.predict(arg_list)
