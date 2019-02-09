@@ -1,5 +1,6 @@
 import pandas as pd 
 import numpy as np
+from sklearn.metrics import mean_squared_error, mean_absolute_error, explained_variance_score
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import ExtraTreesRegressor
 
@@ -18,24 +19,27 @@ y = sc_y.fit_transform(y.values.reshape(-1, 1))
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 
-models = []
+models  = []
 results = []
-names = []
+names   = []
 scoring = []
 
-# Random forest model
-random_forest = RandomForestRegressor(n_estimators = 50, random_state = 42)
-random_forest.fit(X_train, y_train)
-print(random_forest.feature_importances_)
-y_pred_rf = random_forest.predict(X_test)
+# Append models
+models.append(('RandomForest', RandomForestRegressor()))
+models.append(('ExtraTreesRegressor', ExtraTreesRegressor()))
 
-# Extra Trees Regressor
-y_pred
+for name, model in models:
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    
+    # Evaluate the model
+    score = explained_variance_score(sc_y.inverse_transform(y_test), sc_y.inverse_transform(y_pred))
+    mse   = mean_squared_error(sc_y.inverse_transform(y_pred), sc_y.inverse_transform(y_test))
 
-# Rescale it back
-y_pred = sc_y.inverse_transform(y_pred)
-y_test = sc_y.inverse_transform(y_test)
+    results.append(mse)
+    names.append(name)
+    
+    msg = "%s: %f (%f)" % (name, score, mae)
+    print(msg)
 
-# Measure Accuracy
-from sklearn.metrics import mean_squared_error
-acc_rf = mean_squared_error(y_test, y_pred) # Mean Squared Error to measure the accuracy
+
