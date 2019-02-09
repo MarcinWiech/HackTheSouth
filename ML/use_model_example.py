@@ -2,9 +2,11 @@
 import pickle 
 from sklearn.ensemble import ExtraTreesRegressor
 
-filename = "ml_model.sav"
-
-model = pickle.load(open(filename, 'rb'))
-x_test = [[30, 10, 10, 0], [20, 5 , 1 ,1]]  # temp, RH, wind, rain
-
-y_pred = model.predict(x_test) # predict the data 
+class ExtraTreesRegr:
+    x_test = [[30, 10, 10, 0], [20, 5 , 1 ,1]]  # temp, RH, wind, rain
+    def __init__(self):
+        self.filename = "ml_model.sav"
+        self.model = pickle.load(open(self.filename, 'rb'))
+    
+    def predict(self, arg_list):
+        return self.model.predict(arg_list)
