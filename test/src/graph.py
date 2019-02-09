@@ -18,7 +18,7 @@ def addCities():
         temp = weather.getTemp(json)
         humidity = weather.getHumidity(json)
         wind = weather.getWind(json)
-        rain = 0
+        rain = weather.getRain(json)
 
         arg_list = [[temp, humidity, wind, rain]]
         coordinates = [[x, y]]
@@ -41,7 +41,7 @@ def randomAddLocations():
         temp = weather.getTemp(json)
         humidity = weather.getHumidity(json)
         wind = weather.getWind(json)
-        rain = 0
+        rain = weather.getRain(json)
 
         arg_list = [[temp, humidity, wind, rain]]
         coordinates = [[x, y]]

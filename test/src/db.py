@@ -29,7 +29,6 @@ def insertRow(Location, X, Y, Temperature, Wind, Humidity, Rain, Area):
 
     cursor.execute(sql_insert_query, (Location, X, Y, Temperature, Wind, Humidity, Rain, Area))
     cnxn.commit()
-    cnxn.close()
 
 def printRows():
     c = connect2Database()

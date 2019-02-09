@@ -38,6 +38,25 @@ def getWind(json):
 def getHumidity(json):
     return json['main']['humidity']
 
+def getRain(json):
+    rain = json['weather'][0]['description']
+
+    if rain == "clear sky":
+        return 0.0
+    elif rain == "broken clouds":
+        return 0.06
+    elif rain == "overcast clouds":
+        return 0.08
+    elif rain == "few clouds":
+        return 0.1
+    elif rain == "light rain":
+        return 0.12
+    elif rain == "moderate rain":
+        return 0.15
+    else:
+        return 0
+    #holy fuck lmao xDDD
+
 def getCoordinates(json):
     lon = json['coord']['lon']
     lat = json['coord']['lat']
@@ -45,7 +64,9 @@ def getCoordinates(json):
 
 
 if __name__ == '__main__':
-    print(getWind(getCityWeather("Middletown")))
+    s = getCityWeather("London")
+    print(getRain(s))
+
 
 
 
