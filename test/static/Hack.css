@@ -81,6 +81,9 @@ div{padding: 0;}
 	opacity: 0.86;
 }
 
+.photo {
+    /*background-image: url("Pictures/02.jpg");*/
+}
 
 input{border-radius: 20px; margin-bottom: 30px; text-align: center; opacity: 0.9;}
 
