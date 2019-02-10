@@ -1,9 +1,10 @@
 import ML
-from src import weather, db
+import weather
 from ML import high_risk_area
 from ML.extra_trees_regr import ExtraTreesRegr
 import random
 import time
+import db
 
 def addCities():
     dict = ML.high_risk_area.high_risk_area
@@ -57,7 +58,7 @@ def randomAddLocations():
         time.sleep(5)
 
 if __name__ == '__main__':
-    addCities()
+    randomAddLocations()
 
 
 
