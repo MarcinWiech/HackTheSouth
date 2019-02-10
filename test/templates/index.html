@@ -30,10 +30,11 @@
 	  <p>Better know before it is too late.</p>
 	  <div>
           <form action="{{ url_for('index') }}" method="post">
-              <input type="text" placeholder="city" name="city">
+              <input type="text" placeholder="Please enter city name" name="city">
               <div></div>
               <input class="btn btn-dark btn-lg" type="submit" value="Predict Now">
           </form>
+          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_prediction }}</h2>
       </div>
 
 	</div>	

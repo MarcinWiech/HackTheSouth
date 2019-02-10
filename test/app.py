@@ -49,10 +49,11 @@ def handle_data():
     if 'message' not in json.keys():
         predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
         print(req ," " , predict)
-        print(regr.predict([[900,900,900,0]], [[0,0]]))
+        output_prediction = "The prediction for " + req + " is " + str(round(predict[0],2))
+        return render_template('index.html', output_prediction = output_prediction)
     else:
         print("Incorrect Value")
-    return index()
+        return render_template('index.html', output_prediction= "Incorrect Value")
 
 """"#('', 204)
 hts2019
