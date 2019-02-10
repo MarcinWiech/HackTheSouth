@@ -4,10 +4,11 @@ from flask import request
 from ML.extra_trees_regr import ExtraTreesRegr
 import json
 import src.weather
+import src.news
 
 weather = src.weather
 regr = ExtraTreesRegr()
-
+news = src.news
 app = Flask(__name__)
 
 
@@ -55,12 +56,18 @@ def handle_data():
         print("Incorrect Value")
         return render_template('index.html', output_prediction= "Incorrect Value")
 
+@app.route('/news', methods=['GET','POST'])
+def put_news():
+    json = news.getNews()
+    json = json['articles']
+    return render_template('news.html',json=json)
+
+
 """"#('', 204)
 hts2019
 makamaka88@gmail.com
 """
-def test():
-    print()
+
 
 if __name__ == '__main__':
     app.run()
