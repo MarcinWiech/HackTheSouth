@@ -8,20 +8,24 @@ import src.news
 
 weather = src.weather
 regr = ExtraTreesRegr()
-news = src.news
+news1 = src.news
 app = Flask(__name__)
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    m = str(get_output())
     return render_template('index.html')
+
 
 @app.route('/developers')
 def developers():
-    m = str(get_output())
     return render_template('developers.html')
+
+
+@app.route('/map')
+def map():
+    return render_template('map.html')
 
 
 @app.route('/background_process_test')
@@ -63,15 +67,15 @@ def handle_data():
         return render_template('index.html', output_prediction="Incorrect Value")
 
 @app.route('/news', methods=['GET','POST'])
-def put_news():
-    json = news.getNews()
+def news():
+    json = news1.getNews()
     json = json['articles']
     return render_template('news.html', json=json)
 
 
 #('', 204)
 
-data = {'London': 0.2, 'San Diego': 3, 'Perth': 7, 'Southampton': 0.1}
+data = {'London': 0.2, 'San Diego': 3, 'Perth': 7, 'Southampton': 0.1, 'Miami': 4}
 
 
 if __name__ == '__main__':
