@@ -75,7 +75,7 @@ def news():
 
 #('', 204)
 
-data = {'London': 0.2, 'San Diego': 3, 'Perth': 7, 'Southampton': 0.1, 'Miami': 4}
+data = {'London': 0.2, 'San Diego': 3, 'Perth': 7, 'Southampton': 0.1, 'Miami': 4, 'Sydney': 2.2}
 
 
 if __name__ == '__main__':

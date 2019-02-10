@@ -12,11 +12,12 @@
 
 
 <body>
-    <div class="topnav">
+    < <div class="topnav">
  		<a href="{{ url_for('index') }}">Our Prediction</a>
+        <a href="{{ url_for('map') }}">Map</a>
   		<a href="{{ url_for('news') }}">News</a>
   		<a href="{{ url_for('developers') }}">Developers</a>
-        <a href="{{ url_for('map') }}">Map</a>
+
 	</div>
     <div class="jumbotron" id="intro">
 	  <h1 class="display-4" id="topic">Forest Fire News</h1>
@@ -27,7 +28,7 @@
 
 
         {% for post in json %}
-        <div class="col-md-3" id="newsBlock">
+        <div class="col-md-3" id="newsBlock" style="margin-top: 10px">
         <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{post['urlToImage']}}" alt="">
         <div class="card-body">
