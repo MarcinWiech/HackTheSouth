@@ -1,0 +1,43 @@
+body{font-family: 'Noto Serif SC', serif; background-color:  #333;}
+img {
+  border-radius: 50%;
+  box-shadow: 4 4 8px 8px #333 inset;
+}
+#topic{text-align: center;font-weight: 900;}
+#intro{ text-align: center;}
+#grid1{padding: 50px; color: white; text-align: center; opacity: 0.95; font-size: 10%;}
+#grid2{padding: 25px; color: white; text-align: center; opacity: 0.95;}
+#name{font-size: 30px;}
+.jumbotron{
+  background-image: url("Pictures/02.jpg");
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.center-fit {
+  max-width: 100%;
+    margin: none;
+    padding: 0px;
+}

@@ -15,7 +15,12 @@ app = Flask(__name__)
 @app.route('/index')
 def index():
     m = str(get_output())
-    return render_template('index.html', title='Home', output=m)
+    return render_template('index.html')
+
+@app.route('/developers')
+def developers():
+    m = str(get_output())
+    return render_template('developers.html')
 
 
 @app.route('/background_process_test')
@@ -41,8 +46,12 @@ def get_output():
 def handle_data():
     req = request.form['city']
     json = weather.getCityWeather(req)
-    predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
-    print(predict)
+    if 'message' not in json.keys():
+        predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
+        print(req ," " , predict)
+        print(regr.predict([[900,900,900,0]], [[0,0]]))
+    else:
+        print("Incorrect Value")
     return index()
 
 """"#('', 204)

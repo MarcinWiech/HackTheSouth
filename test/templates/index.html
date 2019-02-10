@@ -1,78 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title>Wildfire Prediction Tool</title>
+	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/Hack.css">
+	<script src="../static/countries.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
 </head>
+
+
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<p>Hello, {{ output }}!</p>
+	<!--<div class="header">
+		<h1>
+			Wildfire Prediction Tool
+		</h1>
+	</div> -->
+	<div class="topnav">
+ 		<a href="#">Our Prediction</a>
+  		<a href="#">News</a>
+  		<a href="{{ url_for('developers') }}">Developers</a>
+	</div>
 
-<script type=text/javascript>
-        $(function() {
-          $('a#test').bind('click', function() {
-            $.getJSON('/background_process_test',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
+	<div class="jumbotron" id="intro">
+	  <h1 class="display-4" id="topic">Wildfire Prediction Tool</h1>
+	  <p class="lead">Are you prepared for the worst?</p>
+	  <hr class="my-4">
+	  <p>Better know before it is too late.</p>
+	  <div>
+          <form action="{{ url_for('index') }}" method="post">
+              <input type="text" placeholder="city" name="city">
+              <div></div>
+              <input class="btn btn-dark btn-lg" type="submit" value="Predict Now">
+          </form>
+      </div>
 
+	</div>	
 
-//button
-<div class='container'>
-    <h3>Test</h3>
-        <form>
-            <a href=# id=test><button class='btn btn-default'>Test</button></a>
-        </form>
+  		<div class="row" id="grid">
+    		<div class="col" id="pic05">
+     		 	<img class="center-fit" src="../static/Pictures/05.jpg" >
+    		</div>
 
-</div>
+	    	<div class="col-6" id="map">
+				<script> 
+					function initMap(){
+						var location = {lat: -25.363, lng: 131.044}
+						var map = new google.maps.Map(document.getElementById("map"),{
+							zoom: 4, 
+							center: location
+						});
+					}
+				</script>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAI-eQ6ogHek0srvXDrtbS1bw-E8Q1KPg&libraries=visualization&callback=initMap"></script>
+	    	</div>
 
+	    	<!--<div class="col" id="box1">
+	     		<div class="container-fluid" id="inputCol">
+					<div id="countryy">
+						Country: <select id="country" name ="country"></select> 
+					</div>
+					<div id="statee">
+						State: <select  name ="state" id ="state"></select>
+					</div>
+					<div >
+						 <button type="button" class="btn btn-secondary">Select</button>
+					</div>
+					
+					<script language="javascript">
+						populateCountries("country", "state");
+					</script>
+		 		</div>
+	   		</div>-->
+ 		 </div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-<button type="button" onClick="refreshPage()">Refresh page</button>
-
-
-<div id="demo">
-  <h2>Get Prediction for the city</h2>
-  <button type="button" onclick="loadDoc()">Change Content</button>
-</div>
-
-<script>
-function refreshPage(){
-    window.location.reload();
-}
-
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "output", true);
-  xhttp.send();
-}
-</script>
-
-
-<form action="{{ url_for('index') }}" method="post">
-{#    <input type="text" placeholder="temperature C" name="temperature">#}
-{#    <input type="text" placeholder="humidity" name="humidity">#}
-{#    <input type="text" placeholder="wind (km/h)" name="wind">#}
-{#    <input type="text" placeholder="rain (mm/m^2)" name="rain">#}
-    <input type="text" placeholder="city" name="city">
-
-
-    <input type="submit">
-</form>
-
-{#<form method="POST">#}
-{#    <input name="text">#}
-{#    <input type="submit">#}
-{#</form>#}
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+body{font-family: 'Noto Serif SC', serif; background-color:  #E8E8ED;}
+
+#country{width:200px; color: grey;}
+#state{width: 200px; color: grey;}
+#countryy{color: white;}
+#statee{color: white;}
+#topic{text-align: center;font-weight: 900;}
+/*div{border: solid 10px purple;}*/
+#content{padding: 0;}
+#intro{ text-align: center;}
+#box1{ background-color: black; padding: none; }
+#grid{padding: none;}
+#inputCol{align-content: center;}
+#pic05{margin: 0; padding: 0px;}
+#searchBar{width: 400px;}
+/*#predict{cursor: url(Trump.cur), default;}*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+#map{
+ 	height:  462.5px;
+	margin:0;
+	padding: 0;
+}
+.imgbox {
+    display: grid;
+    height: 100%;
+        }
+.center-fit {
+ 	max-width: 100%;
+    margin: auto;
+}
+
+div{padding: 0;}
+
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.jumbotron{
+	background-image: url("Pictures/02.jpg");
+	opacity:0.95;
+	font-weight: bold;
+	height: 1100px;
+	margin: 0;
+	-webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.btn-dark{
+	opacity: 0.86;
+}
+
+
+input{border-radius: 20px; margin-bottom: 30px; text-align: center; opacity: 0.9;}
+
