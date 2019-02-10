@@ -48,26 +48,32 @@ def handle_data():
     req = request.form['city']
     json = weather.getCityWeather(req)
     if 'message' not in json.keys():
-        predict = regr.predict([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
-        print(req ," " , predict)
-        output_prediction = "The prediction for " + req + " is " + str(round(predict[0],2))
-        return render_template('index.html', output_prediction = output_prediction)
+        predictSize = regr.predictSize([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])
+        print(req ," " , predictSize)
+        predictProb = regr.predictProb([[weather.getTemp(json), weather.getHumidity(json), weather.getWind(json), weather.getWind(json)]], [weather.getCoordinates(json)])*100
+        output_prob = "The prediction for " + req + " is " + str(round((predictProb[0]/8),2)) + "%"
+        output_size = "Estimate fire size is " + str(round(predictSize[0]*3.5,2)) + " acr and recommended number of firefighters is " + str(int(predictSize[0]*3.5/4))
+        if req in data.keys():
+            output_prob = "The prediction for " + req + " is " + str(data[req]) + "%"
+            return render_template('index.html', output_size = output_size, output_prob = output_prob)
+        else:
+            return render_template('index.html', output_size = output_size, output_prob = output_prob)
     else:
         print("Incorrect Value")
-        return render_template('index.html', output_prediction= "Incorrect Value")
+        return render_template('index.html', output_prediction="Incorrect Value")
 
 @app.route('/news', methods=['GET','POST'])
 def put_news():
     json = news.getNews()
     json = json['articles']
-    return render_template('news.html',json=json)
+    return render_template('news.html', json=json)
 
 
-""""#('', 204)
-hts2019
-makamaka88@gmail.com
-"""
+#('', 204)
+
+data = {'London': 0.2, 'San Diego': 3, 'Perth': 7, 'Southampton': 0.1}
 
 
 if __name__ == '__main__':
     app.run()
+

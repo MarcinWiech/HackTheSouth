@@ -5,7 +5,7 @@ test_json = "{'coord': {'lon': -0.13, 'lat': 51.51}, 'weather': [{'id': 803, 'ma
 
 def get_api_key():
     config = configparser.ConfigParser()
-    config.read('/home/konstantinos/JetBrains/PycharmProjects/Wildfires/test/credentials/config.ini')
+    config.read('/home/marcin/Projects/gonow/HackTheSouth/test/credentials/config.ini')
     return config['openweathermap']['api']
 
 def getCityWeather(location):

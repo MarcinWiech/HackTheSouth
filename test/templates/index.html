@@ -8,6 +8,37 @@
 	<link rel="stylesheet" type="text/css" href="../static/Hack.css">
 	<script src="../static/countries.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+
+
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
 </head>
 
 
@@ -30,12 +61,17 @@
 	  <p>Better know before it is too late.</p>
 	  <div>
           <form action="{{ url_for('index') }}" method="post">
-              <input type="text" placeholder="Please enter city name" name="city" id="pac-input" class="controls">
+              <input type="text" placeholder="Please enter city name" name="city">
               <div></div>
               <input class="btn btn-dark btn-lg" type="submit" value="Predict Now">
           </form>
-          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_prediction }}</h2>
+          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_prob }}</h2>
+          <div style="height: 20px;"></div>
+          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_size }}</h2>
       </div>
+
+
+        <div id="regions_div" style="width: 900px; height: 500px;"></div>
 
 	</div>	
 
@@ -45,12 +81,12 @@
     		</div>
 
 	    	<div class="col-6" id="map">
-<script> 
+<script>
 var map,heatmap;
 
 function initMap() {
   // The location of Uluru
-  var coor = {lat: -25.344, lng: 131.036};
+  var coor = {lat: 35.3585, lng: -103.6610};
   // The map, centered at Uluru
   map = new google.maps.Map(
       document.getElementById('map'),
