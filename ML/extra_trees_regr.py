@@ -10,7 +10,10 @@ class ExtraTreesRegr:
     
     def predict(self, arg_list = [[0,0,0,0]], coordinates = [[0, 0]]):
         if self.is_input_alright(arg_list, coordinates):
-            sum =  self.predict_hard_coded(coordinates) + self.model.predict(arg_list)  
+            temp = self.model.predict(arg_list)/25.0
+            if temp > 1:
+                temp = 1
+            sum =  self.predict_hard_coded(coordinates) + temp
             return sum
         else: 
             return "Incorrect Input!"
