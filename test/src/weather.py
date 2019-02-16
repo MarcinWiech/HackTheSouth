@@ -64,8 +64,3 @@ def getCoordinates(json):
 if __name__ == '__main__':
     s = getCityWeather("London")
     print(getRain(s))
-
-
-
-
-

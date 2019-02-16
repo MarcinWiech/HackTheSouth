@@ -2,17 +2,12 @@
 <html>
 <head>
 	<title>Wildfire Prediction Tool</title>
-	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../static/Hack.css">
 	<script src="../static/countries.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
-
-
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
       <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
      google.charts.load('current', {
@@ -36,7 +31,6 @@
 
       ]);
 
-
       var options = {
         region: 'US',
         displayMode: 'markers',
@@ -47,17 +41,8 @@
       chart.draw(data, options);
     };
     </script>
-
-
 </head>
-
-
 <body style="background-color: #333">
-	<!--<div class="header">
-		<h1>
-			Wildfire Prediction Tool
-		</h1>
-	</div> -->
     <div class="topnav">
  		<a style="font-size: 3rem;" href="{{ url_for('index') }}">Our Prediction</a>
         <a style="font-size: 3rem;" href="{{ url_for('map') }}">Map</a>
@@ -85,6 +70,5 @@
             </div>
 	</div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
 </body>
 </html>

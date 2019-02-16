@@ -2,18 +2,13 @@
 <html>
 <head>
 	<title>Wildfire Prediction Tool</title>
-	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../static/Hack.css">
 	<script src="../static/countries.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
-
-
-     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-      <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
      google.charts.load('current', {
        'packages': ['geochart'],
@@ -33,9 +28,7 @@
           ['Philadelphia', 0.1],
           ['Austin', 2.3],
           ['San Francisco', 1.1],
-
       ]);
-
 
       var options = {
         region: 'US',
@@ -47,40 +40,21 @@
       chart.draw(data, options);
     };
     </script>
-
-
 </head>
-
-
 <body>
-	<!--<div class="header">
-		<h1>
-			Wildfire Prediction Tool
-		</h1>
-	</div> -->
 	 <div class="topnav">
  		<a style="font-size: 3rem;" href="{{ url_for('index') }}">Our Prediction</a>
         <a style="font-size: 3rem;" href="{{ url_for('map') }}">Map</a>
   		<a style="font-size: 3rem;" href="{{ url_for('news') }}">News</a>
   		<a style="font-size: 3rem;" href="{{ url_for('developers') }}">Developers</a>
-
 	</div>
-
 	</div>
-
   		<div class="row" id="grid" style="background-color: white;">
-
-
-{#	    	<div class="col-6" id="">#}
-                <div id="chart_div" style="width: 90%; height: 50%;  margin: auto; align-items: center; padding-top: 50px;"></div>
-
-				<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAI-eQ6ogHek0srvXDrtbS1bw-E8Q1KPg&libraries=visualization,places&callback=initMap">
-    </script>
-{#	    	</div>#}
-
- 		 </div>
+            <div id="chart_div" style="width: 90%; height: 50%;  margin: auto; align-items: center; padding-top: 50px;"></div>
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAI-eQ6ogHek0srvXDrtbS1bw-E8Q1KPg&libraries=visualization,places&callback=initMap">
+            </script>
+        </div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
 </body>
 </html>
