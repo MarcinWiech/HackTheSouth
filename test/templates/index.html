@@ -59,28 +59,28 @@
 		</h1>
 	</div> -->
     <div class="topnav">
- 		<a href="{{ url_for('index') }}">Our Prediction</a>
-        <a href="{{ url_for('map') }}">Map</a>
-  		<a href="{{ url_for('news') }}">News</a>
-  		<a href="{{ url_for('developers') }}">Developers</a>
+ 		<a style="font-size: 3rem;" href="{{ url_for('index') }}">Our Prediction</a>
+        <a style="font-size: 3rem;" href="{{ url_for('map') }}">Map</a>
+  		<a style="font-size: 3rem;" href="{{ url_for('news') }}">News</a>
+  		<a style="font-size: 3rem;" href="{{ url_for('developers') }}">Developers</a>
 
 	</div>
 
 	<div class="jumbotron" id="intro">
         <div class="photo">
-	  <h1 class="display-4" id="topic">Wildfire Prediction Tool</h1>
-	  <p class="lead">Are you prepared for the worst?</p>
+	  <h1 class="display-4" id="topic" style="font-size: 5rem;">Wildfire Prediction Tool</h1>
+	  <p style="font-size: 3.5rem;">Are you prepared for the worst?</p>
 	  <hr class="my-4">
-	  <p>Better know before it is too late.</p>
+	  <p style="font-size: 3rem;">Better know before it is too late.</p>
 	  <div>
           <form action="{{ url_for('index') }}" method="post">
-              <input type="text" placeholder="Please enter city name" name="city">
+              <input type="text" placeholder="Please enter city name" name="city"  style="font-size: 3rem;">
               <div></div>
-              <input class="btn btn-dark btn-lg" type="submit" value="Predict Now">
+              <input class="btn btn-dark btn-lg" type="submit" value="Predict Now"   style="font-size: 3rem;">
           </form>
-          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_prob }}</h2>
+          <h1 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white; font-size: 3rem; font-weight: bold;">{{ output_prob }}</h1>
           <div style="height: 20px;"></div>
-          <h2 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white;">{{ output_size }}</h2>
+          <h1 style="text-shadow: 2px 2px #1b1111;display: inline;padding: 10px;border-radius: inherit;color: white; font-size: 3rem;font-weight: bold;">{{ output_size }}</h1>
       </div>
             </div>
 	</div>

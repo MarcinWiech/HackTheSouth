@@ -64,7 +64,7 @@ def handle_data():
             return render_template('index.html', output_size = output_size, output_prob = output_prob)
     else:
         print("Incorrect Value")
-        return render_template('index.html', output_prediction="Incorrect Value")
+        return render_template('index.html', output_prob="Incorrect Value")
 
 @app.route('/news', methods=['GET','POST'])
 def news():
